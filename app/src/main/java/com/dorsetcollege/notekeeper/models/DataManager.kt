@@ -1,7 +1,7 @@
 package com.dorsetcollege.notekeeper.models
 
 // this does not need a primary constructor
-class DataManager {
+object  DataManager {
 
     val courses = HashMap<String, CourseInfo>()
 
@@ -13,8 +13,18 @@ class DataManager {
     init {
 
         initializeCourses()
+        initializeNotes()
     }
+    private fun initializeNotes() {
 
+        var course = CourseInfo("Kotlin", "Integers")
+        var note = NoteInfo(course, "title of a note", "some text here")
+
+        notes.add(note)
+        notes.add(note)
+        notes.add(note)
+
+    }
     private fun initializeCourses() {
 
         var course = CourseInfo("Kotlin", "Integers")
